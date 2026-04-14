@@ -94,6 +94,7 @@
     hyprshot
     kdePackages.qt5compat # for sddm
     librewolf
+    lutris
     mako
     mangohud # overlay for steam
     nautilus
