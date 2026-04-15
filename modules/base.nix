@@ -96,13 +96,14 @@
     hyprlauncher
     hyprpaper
     hyprpolkitagent
-    hyprshot
+    hyprshot # ss
     kdePackages.qt5compat # for sddm
     librewolf
-    lutris
+    # lutris # gaming library(?)
     mako
     mangohud # overlay for steam
     nautilus
+    pcsx2
     pipewire
     # prismlauncher # minecraft
     protonup-ng # protonGE for gaming
