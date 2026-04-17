@@ -105,7 +105,7 @@
     nautilus
     pcsx2
     pipewire
-    # prismlauncher # minecraft
+    prismlauncher # minecraft
     protonup-ng # protonGE for gaming
     protonvpn-gui # vpn
     waybar
