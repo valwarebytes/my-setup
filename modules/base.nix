@@ -86,6 +86,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alejandra # nix formatter
+    appimage-run # for appimages
     brightnessctl
     docker-compose # for Winboat
     fish
