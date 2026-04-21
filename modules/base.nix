@@ -114,7 +114,7 @@
     where-is-my-sddm-theme
     winboat
     xdg-desktop-portal-hyprland
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    zen-browser
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
