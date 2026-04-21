@@ -114,7 +114,6 @@
     where-is-my-sddm-theme
     winboat
     xdg-desktop-portal-hyprland
-    zen-browser
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
