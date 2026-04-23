@@ -9,7 +9,7 @@
           wallpaper {
             monitor=
             fit_mode=cover
-            path=/home/val/Pictures/hyprland-wp.jpg
+            path=/home/val/Pictures/hyprland-wp.webp
           }
           ipc=true
           splash=false
