@@ -98,11 +98,15 @@
     hyprpaper
     hyprpolkitagent
     hyprshot # ss
+    inotify-tools # for waybar stuff
     kdePackages.qt5compat # for sddm
     librewolf
     mako
     mangohud # overlay for steam
     nautilus
+    nerd-fonts.jetbrains-mono
+    pamixer # for waybar stuff
+    pavucontrol # for waybar stuff
     pcsx2
     pipewire
     prismlauncher # minecraft
