@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    # ./hyprconf.nix
-    # ./hyprpaper.nix
+    ./hyprconf.nix
+    ./hyprpaper.nix
   ];
 }
