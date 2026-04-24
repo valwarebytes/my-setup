@@ -108,6 +108,7 @@
     pamixer # for waybar stuff
     pavucontrol # for waybar stuff
     pcsx2
+    phinger-cursors # havent used it yet bc idk how
     pipewire
     prismlauncher # minecraft
     protonup-ng # protonGE for gaming
