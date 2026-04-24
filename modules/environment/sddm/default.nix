@@ -15,6 +15,4 @@ in {
       my-sddm-theme
     ];
   };
-
-  # wayland.enable = true; # not sure i need this experimental wayland support
 }
