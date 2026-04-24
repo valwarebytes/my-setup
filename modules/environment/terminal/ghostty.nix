@@ -1,7 +1,7 @@
 {...}: {
   hjem.extraModules = [
     {
-      files."/home/val/.config/ghostty/config".text =
+      files.".config/ghostty/config".text =
         /*
         hyprlang
         */
