@@ -47,7 +47,7 @@
           $terminal = ghostty
           $fileManager = nautilus
           $menu = hyprlauncher
-          $browser = /home/val/Downloads/helium.AppImage
+          $browser = librewolf
 
 
           #################
