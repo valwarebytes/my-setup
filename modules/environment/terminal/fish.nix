@@ -1,3 +1,3 @@
-# work in progress
+# not sure i need to configure fish
 {...}: {
 }

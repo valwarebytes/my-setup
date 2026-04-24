@@ -1,6 +1,6 @@
 {...}: {
   imports = [
     # ./fish.nix
-    # ./ghostty.nix
+    ./ghostty.nix
   ];
 }
