@@ -88,6 +88,7 @@
     alejandra # nix formatter
     appimage-run # for appimages
     brightnessctl
+    capitaine-cursors # another cursor
     docker-compose # for Winboat
     fish
     freerdp # for Winboat
@@ -108,7 +109,6 @@
     pamixer # for waybar stuff
     pavucontrol # for waybar stuff
     pcsx2
-    phinger-cursors # havent used it yet bc idk how
     pipewire
     prismlauncher # minecraft
     protonup-ng # protonGE for gaming
