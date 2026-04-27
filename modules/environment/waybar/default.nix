@@ -3,19 +3,12 @@
   pkgs,
   ...
 }: {
-  environment.systemPackages = with pkgs; [
-    waybar
-    inotify-tools
-    pavucontrol
-    pamixer
-  ];
-
   hjem.users.val.xdg.config.files = {
     "waybar/launch-waybar.sh".source =
       pkgs.writeShellScript "launch-waybar.sh"
       ''
         CONFIG_FILES="/home/val/.config/waybar"
-        trap "killall waybar" EXIT
+        trap "pkill waybar" EXIT
         while true; do
           waybar &
           export APP_PID=$!
@@ -27,12 +20,14 @@
     "waybar/config.jsonc" = {
       generator = lib.generators.toJSON {};
       value = {
-        layer = "bottom";
+        layer = "top"; # was "bottom" — windows would render over the bar
         position = "bottom";
+        height = 34; # explicit height prevents inconsistent sizing across reloads
 
         modules-left = ["hyprland/workspaces"];
-        modules-center = ["clock"];
+        modules-center = ["hyprland/window" "clock"];
         modules-right = [
+          "idle_inhibitor"
           "temperature"
           "cpu"
           "memory"
@@ -42,6 +37,7 @@
           "pulseaudio"
           "battery"
           "tray"
+          "custom/power"
         ];
 
         "hyprland/workspaces" = {
@@ -61,18 +57,32 @@
           };
         };
 
+        "hyprland/window" = {
+          format = "{}";
+          separate-outputs = true;
+        };
+
         clock = {
           format = " {:%a %d %b  %H:%M}";
           tooltip-format = "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>";
         };
 
+        idle_inhibitor = {
+          format = "{icon}";
+          format-icons = {
+            activated = "󰒳";
+            deactivated = "󰒲";
+          };
+          tooltip-format-activated = "Idle inhibitor: ON";
+          tooltip-format-deactivated = "Idle inhibitor: OFF";
+        };
+
         temperature = {
-          # adjust hwmon-path if needed: ls /sys/class/hwmon/*/temp*_input
+          hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input";
           critical-threshold = 80;
           interval = 5;
           format = "{icon} {temperatureC}°C";
           format-icons = ["" "" "" "" ""];
-          # states so CSS can color it
           tooltip = true;
         };
 
@@ -80,8 +90,6 @@
           interval = 5;
           format = " {usage:2}%";
           tooltip = true;
-          # shows per-core on hover
-          format-multiline = false;
           states = {
             warning = 70;
             critical = 90;
@@ -120,7 +128,7 @@
         };
 
         backlight = {
-          device = "intel_backlight";
+          device = "amdgpu_bl1";
           format = "{icon} {percent}%";
           format-icons = ["󰃞" "󰃟" "󰃠"];
           tooltip = false;
@@ -159,6 +167,12 @@
           icon-size = 18;
           spacing = 6;
         };
+
+        "custom/power" = {
+          format = "⏻";
+          tooltip = false;
+          on-click = "wlogout";
+        };
       };
     };
 
@@ -171,7 +185,9 @@
             border: none;
             border-radius: 0;
             font-size: 13px;
-            font-family: "monospace", "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+            /* Fixed: JetBrainsMono first so the nerd font is actually used,
+               "monospace" is now the generic fallback */
+            font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
             min-height: 0;
             margin: 0;
         }
@@ -202,7 +218,7 @@
         }
 
         #workspaces button.active {
-            background: #dada3a;
+            background: #58e1ff;
             color: #111111;
             font-weight: bold;
         }
@@ -212,11 +228,17 @@
             color: #ffffff;
         }
 
-        /* ── Center clock ───────────────────────────── */
+        /* ── Center ─────────────────────────────────── */
 
-        #clock {
+        #clock,
+        #window {
             color: #dddddd;
             padding: 0 10px;
+        }
+
+        #window {
+            color: #888888;
+            font-style: italic;
         }
 
         /* ── Right modules base ─────────────────────── */
@@ -229,9 +251,13 @@
         #backlight,
         #pulseaudio,
         #battery,
+        #idle-inhibitor,
+        #custom-power,
         #tray {
             padding: 0 8px;
             color: #aaaaaa;
+            /* Smooth color transitions between normal/warning/critical states */
+            transition: color 0.3s ease;
         }
 
         /* Subtle separator between right modules */
@@ -242,7 +268,8 @@
         #network,
         #backlight,
         #pulseaudio,
-        #battery {
+        #battery,
+        #idle-inhibitor {
             border-left: 1px solid #2a2a2a;
         }
 
@@ -286,10 +313,28 @@
             color: #666666;
         }
 
+        /* ── Idle inhibitor ─────────────────────────── */
+
+        #idle-inhibitor.activated {
+            color: #dada3a;
+        }
+
+        /* ── Power button ───────────────────────────── */
+
+        #custom-power {
+            color: #666666;
+            padding: 0 10px;
+        }
+
+        #custom-power:hover {
+            color: #cc3333;
+        }
+
         /* ── Blink animation for critical battery ───── */
 
         @keyframes blink {
-            to { color: #ffffff; }
+            from { color: #cc3333; } /* explicit from state added */
+            to   { color: #ffffff; }
         }
       '';
   };

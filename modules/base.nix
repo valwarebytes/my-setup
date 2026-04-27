@@ -111,12 +111,14 @@
     pcsx2
     pipewire
     prismlauncher # minecraft
+    procps # provides pkill, replacing killall
     protonup-ng # protonGE for gaming
     protonvpn-gui # vpn
     waybar
     wget
     where-is-my-sddm-theme
     winboat
+    wlogout # power off button on waybar
     xdg-desktop-portal-hyprland
   ];
 
