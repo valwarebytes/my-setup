@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   my-sddm-theme = pkgs.where-is-my-sddm-theme.override {
     themeConfig.General = {
-      passwordCursorColor = "#00ff00"; # solid green
+      passwordCursorColor = "#12ff12"; # fo4 green
     };
   };
 in {
