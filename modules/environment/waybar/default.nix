@@ -27,7 +27,6 @@
         modules-left = ["hyprland/workspaces"];
         modules-center = ["hyprland/window" "clock"];
         modules-right = [
-          "idle_inhibitor"
           "temperature"
           "cpu"
           "memory"
@@ -36,6 +35,7 @@
           "backlight"
           "pulseaudio"
           "battery"
+          "idle_inhibitor"
           "tray"
           "custom/power"
         ];
@@ -187,7 +187,7 @@
             font-size: 13px;
             /* Fixed: JetBrainsMono first so the nerd font is actually used,
                "monospace" is now the generic fallback */
-            font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
+            font-family: "JetBrainsMono NF", "Symbols Nerd Font Mono", "Symbols Nerd Font", monospace;
             min-height: 0;
             margin: 0;
         }

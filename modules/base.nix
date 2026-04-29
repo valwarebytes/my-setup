@@ -64,6 +64,8 @@
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 
   # Enable docker (for Winboat)
@@ -105,7 +107,6 @@
     mako
     mangohud # overlay for steam
     nautilus
-    nerd-fonts.jetbrains-mono
     pamixer # for waybar stuff
     pavucontrol # for waybar stuff
     pcsx2
