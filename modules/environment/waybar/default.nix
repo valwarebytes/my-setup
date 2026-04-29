@@ -81,14 +81,13 @@
           hwmon-path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input";
           critical-threshold = 80;
           interval = 5;
-          format = "{icon} {temperatureC}°C";
-          format-icons = ["" "" "" "" ""];
+          format = "󰏈 {temperatureC}°C";
           tooltip = true;
         };
 
         cpu = {
           interval = 5;
-          format = " {usage:2}%";
+          format = "{usage:2}%";
           tooltip = true;
           states = {
             warning = 70;
@@ -98,7 +97,7 @@
 
         memory = {
           interval = 5;
-          format = " {used:0.1f}G/{total:0.1f}G";
+          format = " {used:0.1f}G/{total:0.1f}G";
           tooltip-format = "RAM: {used:0.1f}GiB used\nSwap: {swapUsed:0.1f}GiB used";
           states = {
             warning = 70;
