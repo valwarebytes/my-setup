@@ -130,6 +130,8 @@
           device = "amdgpu_bl1";
           format = "{icon} {percent}%";
           format-icons = ["󰃞" "󰃟" "󰃠"];
+          on-scroll-up = "brightnessctl set 1%-";
+          on-scroll-down = "brightnessctl set 1%+";
           tooltip = false;
         };
 
@@ -142,10 +144,12 @@
             headset = "󰋎";
             default = ["󰕿" "󰖀" "󰕾"];
           };
-          scroll-step = 5;
+          scroll-step = 0; # disable built-in scroll
+          on-scroll-up = "pamixer -d 1"; # inverted: up = decrease
+          on-scroll-down = "pamixer -i 1"; # inverted: down = increase
           on-click = "pamixer -t";
           on-click-right = "pavucontrol";
-          tooltip-format = "{desc}\n{volume}%";
+          tooltip-format = "{desc\n{volume}%";
         };
 
         battery = {
