@@ -20,6 +20,8 @@
         yzhang.markdown-all-in-one
         usernamehw.errorlens
         tomoki1207.pdf
+
+        james-yu.latex-workshop
       ];
     })
   ];
