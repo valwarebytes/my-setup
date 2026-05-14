@@ -7,8 +7,5 @@
     ../modules/environment/sddm
     ../modules/environment/terminal
     ../modules/environment/waybar
-    ../modules/gaming/opengl
-    ../modules/gaming/protonge
-    ../modules/gaming/steam
   ];
 }
