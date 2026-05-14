@@ -68,6 +68,9 @@
     nerd-fonts.symbols-only
   ];
 
+  # Update Framework BIOS
+  services.fwupd.enable = true;
+
   # Enable docker (for Winboat)
   virtualisation.docker.enable = true;
 
