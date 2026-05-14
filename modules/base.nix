@@ -82,11 +82,6 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
-  # Steam
-  programs.steam = {
-    enable = true;
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -108,15 +103,12 @@
     kdePackages.qt5compat # for sddm
     librewolf
     mako
-    mangohud # overlay for steam
     nautilus
     pamixer # for waybar stuff
     pavucontrol # for waybar stuff
     pcsx2
     pipewire
-    prismlauncher # minecraft
     procps # provides pkill, replacing killall
-    protonup-ng # protonGE for gaming
     protonvpn-gui # vpn
     waybar
     wget
