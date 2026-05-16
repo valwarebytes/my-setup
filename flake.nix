@@ -1,19 +1,15 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware?ref=master";
     hjem = {
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
+  outputs = {nixpkgs, ...} @ inputs: let
+    inherit (nixpkgs) lib;
   in {
     nixosConfigurations = {
       # # Workstation
@@ -25,10 +21,11 @@
       #   ];
       # };
       # Laptop
-      ruby = inputs.nixpkgs.lib.nixosSystem {
-        inherit system;
+
+      ruby = lib.nixosSystem {
         modules = [
           inputs.hjem.nixosModules.default
+          inputs.nixos-hardware.nixosModules.framework-16-7040-amd
           ./hosts/ruby/configuration.nix
         ];
       };

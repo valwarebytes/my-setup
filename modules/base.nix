@@ -110,12 +110,12 @@
     pipewire
     procps # provides pkill, replacing killall
     protonvpn-gui # vpn
+    texliveFull # for latex
     waybar
     wget
     where-is-my-sddm-theme
     winboat
-    wlogout # power off button on waybar
-    xdg-desktop-portal-hyprland
+    wlogout # power off button on waybarhyprland
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
