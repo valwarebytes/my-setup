@@ -86,36 +86,39 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alejandra # nix formatter
-    appimage-run # for appimages
-    brightnessctl
-    capitaine-cursors # another cursor
+    appimage-run # runs appimage binaries on NixOS
+    brightnessctl # controls screen and keyboard brightness
+    capitaine-cursors # cursor theme
     docker-compose # for Winboat
-    fish
+    fish # shell
     freerdp # for Winboat
-    ghostty
-    git
-    gsettings-desktop-schemas # for nautilus
-    hyprlauncher
-    hyprpaper
-    hyprpolkitagent
-    hyprshot # ss
-    inotify-tools # for waybar stuff
-    kdePackages.qt5compat # for sddm
-    librewolf
-    mako
-    nautilus
-    pamixer # for waybar stuff
-    pavucontrol # for waybar stuff
-    pcsx2
-    pipewire
-    procps # provides pkill, replacing killall
-    protonvpn-gui # vpn
-    texliveFull # for latex
-    waybar
-    wget
-    where-is-my-sddm-theme
-    winboat
-    wlogout # power off button on waybarhyprland
+    ghostty # terminal emulator
+    git # version control
+    gnome-themes-extra # GTK themes (Adwaita etc.) for Nautilus and GTK apps
+    gsettings-desktop-schemas # required by Nautilus to read theme/icon settings
+    hicolor-icon-theme # universal icon fallback layer, required by most apps
+    hyprlauncher # app launcher for Hyprland
+    hyprpaper # wallpaper daemon for Hyprland
+    hyprpolkitagent # polkit authentication agent for Hyprland
+    hyprshot # screenshot tool
+    inotify-tools # filesystem event watching, used by waybar scripts
+    kdePackages.qt5compat # Qt5 compatibility layer for SDDM
+    librewolf # privacy-focused Firefox fork
+    mako # Wayland notification daemon
+    nautilus # file explorer
+    nwg-look # GTK theme/icon/cursor configurator for wlroots compositors
+    pamixer # CLI audio mixer, used by waybar
+    papirus-icon-theme # icon theme used by Nautilus and the desktop
+    pavucontrol # GUI audio control, used by waybar
+    pipewire # audio and video routing daemon
+    procps # provides pkill
+    protonvpn-gui # VPN
+    texliveFull # LaTeX distribution
+    waybar # status bar for Wayland compositors
+    wget # CLI file downloader
+    where-is-my-sddm-theme # SDDM theme
+    winboat # runs Windows apps via RDP in a container
+    wlogout # logout/power menu for waybar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
