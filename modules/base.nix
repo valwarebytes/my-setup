@@ -103,6 +103,7 @@
     hyprshot # screenshot tool
     inotify-tools # filesystem event watching, used by waybar scripts
     kdePackages.qt5compat # Qt5 compatibility layer for SDDM
+    libreoffice # for opening .xlsx files
     librewolf # privacy-focused Firefox fork
     mako # Wayland notification daemon
     nautilus # file explorer
