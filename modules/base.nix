@@ -90,6 +90,7 @@
     brightnessctl # controls screen and keyboard brightness
     capitaine-cursors # cursor theme
     docker-compose # for Winboat
+    fastfetch # system information tool
     fish # shell
     freerdp # for Winboat
     ghostty # terminal emulator
