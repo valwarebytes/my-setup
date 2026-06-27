@@ -54,7 +54,7 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
+  # Enable touchpad support (enabled by default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Allow unfree packages
@@ -91,6 +91,7 @@
     capitaine-cursors # cursor theme
     docker-compose # for Winboat
     fastfetch # system information tool
+    filen-desktop # cloud drive
     fish # shell
     freerdp # for Winboat
     ghostty # terminal emulator
