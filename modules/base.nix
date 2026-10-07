@@ -94,6 +94,7 @@
     filen-desktop # cloud drive
     fish # shell
     freerdp # for Winboat
+    gfortran # for FORTRAN
     ghostty # terminal emulator
     git # version control
     gnome-themes-extra # GTK themes (Adwaita etc.) for Nautilus and GTK apps
