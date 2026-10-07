@@ -22,6 +22,8 @@
         tomoki1207.pdf
 
         james-yu.latex-workshop
+
+        fortran-lang.linter-gfortran
       ];
     })
   ];
