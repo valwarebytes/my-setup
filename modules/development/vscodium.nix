@@ -15,6 +15,8 @@
         ms-toolsai.jupyter-keymap
         ms-toolsai.jupyter-renderers
 
+        ms-vscode.cpptools
+
         mkhl.direnv
         eamodio.gitlens
         yzhang.markdown-all-in-one
